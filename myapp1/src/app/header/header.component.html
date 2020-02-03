@@ -1,3 +1,16 @@
 <div>
-    <h1>This is header component</h1>
+    <h1>{{ companyName }}</h1>
+    <input type="text" [(ngModel)]='companyName' >
+
+    <!-- <h1 [innerText]="companyName" ></h1> -->
+
+    <!-- <img src="{{imageUrl}}" alt=""> -->
+
+    <img [src]="imageUrl" alt=""> 
+    <br /><br />
+
+    <button (click)='handleClick()' class="btn btn-primary" [class.activebutton]='isActive'>
+        Click Me!
+    </button>
+
 </div>

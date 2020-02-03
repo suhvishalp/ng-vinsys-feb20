@@ -268,7 +268,7 @@ Angular Building Blocks
 
 6. Module
 
-Create a component
+Create a component manually
 -----------------------------------
     1. create a new ts class and annotate using @Component, create a template (html file)
 
@@ -285,3 +285,45 @@ Create a component
             }
 
     2. register the component in appmodule
+
+Create component using cli
+--------------------------------------
+    > ng g c Courses
+
+Day2
+====================================
+
+Data Binding
+------------------------
+    1. string interpolation
+            - display/show some values dynamically in template
+            - show some text dynamically inside div/heading/paragraphs then prefer string interpolation
+            {{ tsfield / property }}
+
+    2. Property Binding
+            - it is preferred when dynamically bind values to certain dom properties 
+            <ele [domProperty]='tsfield'> </ele>
+
+    3. Event binding 
+
+    4. two way data binding
+
+    5. class binding 
+
+    6. style binding 
+
+render lists dynamically using *ngFor directive
+----------------
+    let items = ['item1','item2','item3',........]
+
+
+    <p *ngFor='let i of items'>
+        {{ i }}
+     </p>
+
+
+render data conditionally using *ngIf directive
+---------------------
+
+    <div *ngIf='booleanexpression'> This is some sample text </div>
+

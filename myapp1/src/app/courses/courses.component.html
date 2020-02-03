@@ -1,3 +1,18 @@
 <div>
     <h1>This is Courses Section</h1>
+    <button (click)='handleAddCourse()' class="btn btn-primary">
+        Add Course!...
+    </button>
+    <hr />
+
+    <div *ngIf='courses.length>0;else noCourses'>
+        <div class="course" *ngFor='let item of courses'>
+           <app-single-course [course]='item'></app-single-course>
+        </div>
+    </div>
+
+    <ng-template #noCourses>
+        <h1>No Courses Yet!...</h1>
+    </ng-template>
+
 </div>
