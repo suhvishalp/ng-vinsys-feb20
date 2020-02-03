@@ -7,6 +7,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { CoursesComponent } from './courses/courses.component';
 import {FormsModule} from '@angular/forms';
 import { SingleCourseComponent } from './courses/single-course/single-course.component'
+import { HighlightDirective } from './mydirectives/highlight.directive';
+import { MyCustomDirectiveDirective } from './mydirectives/my-custom-directive.directive';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { SingleCourseComponent } from './courses/single-course/single-course.com
     HeaderComponent,
     NavbarComponent,
     CoursesComponent,
-    SingleCourseComponent
+    SingleCourseComponent,
+    HighlightDirective,
+    MyCustomDirectiveDirective
   ],
   imports: [
     BrowserModule,

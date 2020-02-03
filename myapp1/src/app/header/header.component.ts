@@ -9,6 +9,12 @@ export class HeaderComponent {
     public companyName:string = 'Knowledge And Human Development Authority';
     public imageUrl:string = '/assets/logo1.jpg'
     public isActive:boolean = true;
+    public bgcolor:string='yellow'
+    public myheaderstyle = {
+        color : 'red',
+        backgroundColor:'yellow',
+        padding:'20px'
+    }
 
     constructor(){
         setTimeout(() => {
