@@ -2,13 +2,21 @@
 
 <!-- email / password / name -->
 
-<form [formGroup]='userForm'>
+<form (ngSubmit)='register()' [formGroup]='userForm'>
     <div class="form-group">
         <label for="email">Email</label>
         <input  type="text" 
                 class="form-control" 
                 id="email"
                 formControlName='email'>
+        <div *ngIf="!email.valid && email.touched">
+              <div *ngIf="email.errors.required" class="alert alert-danger">
+                  Email is required...
+              </div>
+              <div *ngIf="email.errors.shouldNotContainSpaces" class="alert alert-danger">
+                Email should not contain spaces ....
+            </div>
+        </div>
     </div>
 
     <div class="form-group">
@@ -17,6 +25,8 @@
                 class="form-control" 
                 id="pwd"
                 formControlName='password'>
+
+        
     </div>
 
     <div class="form-group">
