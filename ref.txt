@@ -327,3 +327,34 @@ render data conditionally using *ngIf directive
 
     <div *ngIf='booleanexpression'> This is some sample text </div>
 
+Built in directives
+--------------------------------
+
+    *ngIf
+
+    *ngFor
+
+    [ngSwitch]
+
+            <div [ngSwitch]='anyexpression'>
+                <div *ngSwitchCase='1'>One</div>
+                <div *ngSwitchCase='2'>Two</div>
+                <div *ngSwitchCase='3'>Three</div>
+                <div *ngSwitchDefault>as fads fds fds</div>
+            </div>
+
+    [ngClass]
+
+    [ngStyle]
+
+
+Day3
+-----------------
+    Form handling
+
+    pipes
+
+    custom pipes
+
+    services 
+    
