@@ -5,17 +5,24 @@ import { AppComponent } from './app.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component'
+import { ShortenPipe } from './mypipes/shorten.pipe';
+import { LoggerService } from './myservices/logger.service';
+import { PostsComponent } from './posts/posts.component';
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginFormComponent,
-    UserRegistrationFormComponent
+    UserRegistrationFormComponent,
+    ShortenPipe,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

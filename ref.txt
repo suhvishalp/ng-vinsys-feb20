@@ -351,8 +351,50 @@ Built in directives
 Day3
 -----------------
     Form handling
+    ---------------------
+        1. using Template Driven formats
+                -> NgForm/FormGroup/FormControl and few other objects are created implicitely, 
+                        just by adding few directives in templates 
+                -> good for simple forms with basic validations 
+                -> easy to create
+
+        2. using Reactive Forms
+                -> NgForm/FormGroup/FormControl and few other objects are created explicitely through code
+                -> good for complex forms with custom validation
+                -> more testable 
+
+
+
+        NgForm directive
+        -----------------------
+            - Creates a top-level "FormGroup" instance and binds it to a form to track aggregate form value and validation status
+
+        FormGroup object
+        -------------------
+            - Tracks the value and validity state of a group of "FormControl" objects
+
+        FormControl object
+        ------------------------
+            - Track the value and validity of an individual form element 
+
+
+
+        new FormControl(state, ValidatorFn|ValidatorFn[])
+
+
+        new FormControl('', Validators.required)
+
+        new FormControl('', [Validators.required, Validators.minLength(4)])
+
 
     pipes
+        - used to transform data 
+
+        - uppercase
+        - lowercase
+        - number
+        - currency
+        - date
 
     custom pipes
 
