@@ -400,3 +400,8 @@ Day3
 
     services 
     
+
+    HttpClient Service
+    -------------------
+        - @angular/http/common package provides "HttpClientModule"
+        - the HttpClient service is used to make http calls 

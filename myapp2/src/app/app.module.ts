@@ -8,7 +8,8 @@ import { UserRegistrationFormComponent } from './user-registration-form/user-reg
 import { ShortenPipe } from './mypipes/shorten.pipe';
 import { LoggerService } from './myservices/logger.service';
 import { PostsComponent } from './posts/posts.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { MoviesComponent } from './movies/movies.component'
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {HttpClientModule} from '@angular/common/http'
     LoginFormComponent,
     UserRegistrationFormComponent,
     ShortenPipe,
-    PostsComponent
+    PostsComponent,
+    MoviesComponent
   ],
   imports: [
     BrowserModule,
