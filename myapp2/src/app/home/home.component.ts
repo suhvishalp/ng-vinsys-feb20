@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  myVar:any;
+
+  constructor(private sanitizer:DomSanitizer) {
+    let string = this.sanitizer.bypassSecurityTrustHtml("<h1>hello</h1>")
+    this.myVar = string;
+   }
 
   ngOnInit() {
   }

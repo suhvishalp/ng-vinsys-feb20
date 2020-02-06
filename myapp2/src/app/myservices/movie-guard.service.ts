@@ -6,20 +6,20 @@ import { UserService } from './user.service';
   providedIn: 'root'
 })
 export class MovieGuard implements CanActivate {
- 
+
   canActivate(route: import("@angular/router").ActivatedRouteSnapshot, state: import("@angular/router").RouterStateSnapshot): boolean | import("@angular/router").UrlTree | import("rxjs").Observable<boolean | import("@angular/router").UrlTree> | Promise<boolean | import("@angular/router").UrlTree> {
-   
-      return new Promise((resolve, reject)=>{
-        if(this.userService.isLoggedIn())
-            resolve(true)
+
+    return new Promise((resolve, reject) => {
+      if (this.userService.isLoggedIn())
+        resolve(true)
       else {
         this.router.navigate(['/login'])
-          reject(false)
+        reject(false)
       }
-      })
+    })
 
 
   }
 
-  constructor(private userService:UserService, private router:Router) { }
+  constructor(private userService: UserService, private router: Router) { }
 }

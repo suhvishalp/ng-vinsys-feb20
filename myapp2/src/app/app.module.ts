@@ -19,6 +19,11 @@ import { environment } from '../environments/environment';
 import { LogoutComponent } from './logout/logout.component';
 import { MovieGuard } from './myservices/movie-guard.service';
 import { AdminGuard } from './myservices/admin-guard.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatNativeDateModule, MatInputModule } from '@angular/material';
+
 
 const appRoutes:Routes = [
   {path : '', component: HomeComponent},
@@ -47,10 +52,16 @@ const appRoutes:Routes = [
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule
   ],
   providers: [
-    {provide:ErrorHandler, useClass:MyErrorHandler}
+    {provide:ErrorHandler, useClass:MyErrorHandler},
+    MatDatepickerModule
   ],
   bootstrap: [AppComponent]
 })
