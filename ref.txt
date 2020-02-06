@@ -405,3 +405,73 @@ Day3
     -------------------
         - @angular/http/common package provides "HttpClientModule"
         - the HttpClient service is used to make http calls 
+
+
+    Day4
+    ----------------
+
+    Vidly-api-node
+
+        - GET  http://localhost:3900/api/movies
+                    - get all the movies
+
+        - GET  http://localhost:3900/api/movies/{movieid}
+                    - get a movie with given id
+
+        - POST  http://localhost:3900/api/movies
+
+        - PUT  http://localhost:3900/api/movies/{movieid}
+
+        - DELETE  http://localhost:3900/api/movies/{movieid}
+
+
+        - POST  http://localhost:3900/api/users             // {email/password/name}
+
+
+Routing
+----------------------
+    - RouterModule can be used to implement navigation/routing 
+
+    1. configure routes 
+
+            import {Routes} from '@angular/router'
+
+            const appRoutes:Routes = [
+                {path: '', component:HomeComponent},
+                {path: 'login', component : LoginComponent}
+            ]
+
+            @NgModule({
+                declarations:[...],
+                imports:[
+                    RouterModule.forRoot(appRoutes)
+                ],
+                providers:[],
+                bootstrap:[]
+            })
+            export class AppModule{}
+
+
+    /                       - HomeComponent 
+    /login                  - LoginComponent 
+    /register               - RegisterComponent 
+    /movies                 - MoviesComponent 
+
+    2. define a place where you want to load these components via routes
+
+            <router-outlet></router-outlet>
+
+    Day5
+    --------------------
+        Security
+        Authentication/authorization
+        Testing
+            - 'Jasmine' framework is used to write test cases 
+                    - unit tests
+                    - integration tests 
+            - 'Karma' is test runner, to execute the test cases 
+            
+            - What to test?
+                - business logic i.e. classes/models/utilitiy code/calculations/functions/etc.
+
+        Material Design 

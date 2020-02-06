@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Injectable, ErrorHandler } from '@angular/core';
+import { HttpClient, HttpHandler, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { Movie } from '../model/movie.model';
 import {catchError} from 'rxjs/operators'
@@ -14,25 +14,16 @@ export class MovieService {
   constructor(private http:HttpClient) { }
 
   public getAllMovies():Observable<Movie[]>{
-     return this.http.get<Movie[]>(this.apiEndPoint)
-              .pipe(catchError(this.handleError))      
+     return this.http.get<Movie[]>(this.apiEndPoint)                   
   }
 
-
-
-  handleError(error){
-    console.log('handling errors in movieservice')
-    console.log(error)
-    let errorMessage = ''
-    if(error.status >=400 && error.status<500){
-      errorMessage = error.message;
-     return throwError(errorMessage)
-    }else{
-      alert('something went wrong..Server error')
-    }
+  public removeMovie(movieId){
+    const token = localStorage.getItem('token')
+    const headers = new HttpHeaders({
+      'x-auth-token': token
+    });
     
-    return throwError(error)
+    return this.http.delete<Movie>(this.apiEndPoint+'/'+movieId, {headers})
   }
-
 
 }

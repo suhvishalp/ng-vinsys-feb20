@@ -8,6 +8,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PostsComponent implements OnInit {
 
+  public posts;
+
   constructor(private http:HttpClient) { }
 
   ngOnInit() {
@@ -16,6 +18,7 @@ export class PostsComponent implements OnInit {
       (response)=>{
         console.log('Response Success!...')
         console.log(response)
+        this.posts = response;
       }
     )
   }

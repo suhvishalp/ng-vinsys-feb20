@@ -9,8 +9,8 @@ import { MovieService } from '../myservices/movie.service';
 })
 export class MoviesComponent implements OnInit {
 
-  private movies:Movie[];
-  private errMsg:string;
+   movies:Movie[];
+   errMsg:string;
 
   constructor(private movieService:MovieService) { }
 
@@ -29,4 +29,16 @@ export class MoviesComponent implements OnInit {
         )
   }
 
+  removeMovie(movie){
+      this.movieService.removeMovie(movie._id)
+              .subscribe(
+                (response)=>{
+                  console.log('movie delete', response)
+                  this.movies= this.movies.filter(m=>m._id!=movie._id)
+                },
+                (error)=>{
+                  console.log(error)
+                }
+              )
+  }
 }
